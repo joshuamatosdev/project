@@ -13,7 +13,6 @@ import Footer from './components/Footer'
 import {Route, Routes} from "react-router-dom";
 
 
-
 const App = () => {
     const API_URL = "http://localhost:8080/api/artillery";
     const API_URL_INFANTRY = "http://localhost:8080/api/infantry";
@@ -60,7 +59,7 @@ const App = () => {
     }
     useEffect(() => fetchInfantry(), [])
 
-    //set Message that is passed to the header
+    //set the Message that is passed to the header
     const setMessageFunc = (localMessage) => {
         setMessage(localMessage)
     }
@@ -117,7 +116,6 @@ const App = () => {
     }
 
     const setElevatorFunc = (latLng) => setElevator(latLng)
-    //increment count
     const incrementCount = () => {
         setCount(count + 1)
     }
@@ -125,7 +123,7 @@ const App = () => {
     const predictionService = (vehicle) => {
         setPrediction(vehicle)
     }
-    //setCurrentValues on input selection
+    
     const currentArtSelected = (selected) => {
         for (let i = 0; i < artillery.length; i++) {
             if (artillery[i].type === selected.target.value) {

@@ -1,11 +1,11 @@
 import {
+  dangerColor,
   grayColor,
-  roseColor,
-  primaryColor,
   infoColor,
+  primaryColor,
+  roseColor,
   successColor,
-  warningColor,
-  dangerColor
+  warningColor
 } from "./material-kit-react.js";
 
 const gray = "#333";

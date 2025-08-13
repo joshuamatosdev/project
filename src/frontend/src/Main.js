@@ -3,8 +3,7 @@ import React from "react";
 import App from "./App";
 
 
-
-    function Main() {
+function Main() {
         return (
             <div className="container-fluid">
                 <BrowserRouter>

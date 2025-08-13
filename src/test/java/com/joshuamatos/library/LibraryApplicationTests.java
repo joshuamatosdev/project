@@ -29,19 +29,9 @@ class LibraryApplicationTests {
     Boolean initFavorite = false;
     String JSON_Data;
 
-    //
-//	CRUD	Verb	Path	Name	Purpose
-//	Create	POST	/artillery	"create" route	Creates a book
-//	Read	GET	/artillery/{id}	"show" route	Responds with a single book
-//	Update	PATCH	/artillery/{id}	"update" route	Updates attributes of the book
-//	Delete	DELETE	/artillery/{id}	"delete" route	Deletes the book
-//	List	GET	/artillery	"index" or "list" route	Responds with a list of artillery
-    @BeforeEach
+
+
     void init() throws JsonProcessingException {
-//		Long	id
-//		String	type
-//		String	artRange
-//		Boolean (Default: false)	favorite
         ObjectMapper mapper = new ObjectMapper();
         Artillery artillery = new Artillery(inittype, initRange, initFavorite, 2, "");
         JSON_Data = mapper.writeValueAsString(artillery);
@@ -51,8 +41,6 @@ class LibraryApplicationTests {
     void contextLoads() throws Exception {
         this.mvc.perform(get(API_URL)).andExpect(status().isOk());
     }
-
-    //	List	GET	/artillery	"index" or "list" route	Responds with a list of artillery
     @Test
     void getListBooksTest() throws Exception {
         this.mvc.perform(get(API_URL).contentType(APPLICATION_JSON))
@@ -63,7 +51,6 @@ class LibraryApplicationTests {
 
     }
 
-    //	Create	POST	/artillery	"create" route	Creates a book
     @Test
     @Transactional
     @Rollback
@@ -78,7 +65,7 @@ class LibraryApplicationTests {
 
     }
 
-    //	Read	GET	/artillery/{id}	"show" route	Responds with a single book
+
     @Test
     @Transactional
     @Rollback
@@ -91,12 +78,10 @@ class LibraryApplicationTests {
 
     }
 
-    //	Update	PATCH	/artillery/{id}	"update" route	Updates attributes of the book
     @Test
     @Transactional
     @Rollback
     void patchBooksTest() throws Exception {
-        //changes the first book
 
         this.mvc.perform(patch(API_URL + "/1").contentType(APPLICATION_JSON).content(
                 "{" +
@@ -114,14 +99,12 @@ class LibraryApplicationTests {
                 .andExpect(jsonPath("$.favorite").value(false));
     }
 
-    //	Delete	DELETE	/artillery/{id}	"delete" route	Deletes the book
+
     @Test
     @Transactional
     @Rollback
     void deleteBooksTest() throws Exception {
-        //deletes the first book
         this.mvc.perform(delete(API_URL + "/1").contentType(APPLICATION_JSON));
-
         this.mvc.perform(get(API_URL).contentType(APPLICATION_JSON))
                 .andExpect(jsonPath("$[0].id").doesNotExist());
     }

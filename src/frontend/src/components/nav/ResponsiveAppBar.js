@@ -9,13 +9,10 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
-import App from "../../App";
-import {NavLink, Route, Routes} from "react-router-dom";
-import Home from "../pages/Home";
+import {NavLink} from "react-router-dom";
 
 
 const pages = ['Home', 'Gmap', 'Login', 'Register'];
