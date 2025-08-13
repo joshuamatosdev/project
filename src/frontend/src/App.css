@@ -1,0 +1,243 @@
+.gm-style-moc {
+    height: unset !important;
+}
+
+.tacticalMapsLogo {
+    position: absolute;
+    top: 10rem;
+    left: 25rem;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.distance {
+    z-index: 10;
+    color: #FFF;
+    font-size: 24px;
+    text-shadow: 0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 100px #0ff;
+}
+
+.currentGrid {
+
+    z-index: 10;
+    color: #FFF;
+    font-size: 24px;
+    text-shadow: 0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 100px #0ff;
+}
+
+.range {
+    z-index: 10;
+    width: 500px;
+    color: #FFF;
+    font-size: 24px;
+    text-shadow: 0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 100px #0ff;
+}
+
+.infoWindow {
+    z-index: 10;
+    width: 800px;
+    color: #000000;
+    font-size: 20px;
+}
+
+#select-label {
+    color: #000;
+}
+
+
+.mapDiv {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.splash {
+    width: 100%;
+    box-shadow: 0 3px 10px rgb(0 10 0 / 0.2);
+    border: 1px solid #FFFFFF;
+    border-top: 0;
+    opacity: 0.5;
+}
+
+.tableContainer {
+    height: 80vh;
+    width: 100%;
+}
+
+.footerTD {
+    padding: 20px;
+    color: #FFF;
+    font-size: 50px;
+    text-shadow: 0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 100px #0ff;
+}
+
+.imageContainer {
+    background-color: #353535;
+}
+
+/*header, MuiToolbar-root, uiToolbar-root */
+.MuiToolbar-root {
+    left: -500px;
+    margin-left: -100px !important;
+    flex-direction: row !important;
+    display: flex !important;
+}
+
+.containerForMap {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.navlink {
+    width: 100px;
+    max-width: 100px;
+    text-align: left;
+    justify-content: left;
+    left: -300px;
+    margin-left: 0;
+    text-transform: uppercase;
+    flex-grow: 1;
+    font-family: 'monospace';
+    font-weight: 700;
+    letter-spacing: .3rem;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+.form {
+    max-width: 730px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    margin: auto;
+}
+
+.form .form__custom-button {
+    margin-top: 50px;
+}
+
+.redText {
+    color: red;
+}
+
+
+/* CSS */
+.button-49 {
+    font-size: 50px;
+    color:#FFFFFF;
+}
+
+.button-49:after {
+    width: 150px;
+    height: 76px;
+    line-height: 78px;
+    font-size: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(45deg, transparent 5%, #3d4c61 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px rgba(43, 83, 98, 0.8);
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-49:after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: 'ALTERNATE TEXT';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #000000 3%, #636d6f 5%, #3d454f 5%);
+    text-shadow: -3px -3px 0px #2e2525, 3px 3px 0px #344392;
+    clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+    }
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+    }
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+    }
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+    }
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .button-49,
+    .button-49:after {
+        width: 200px;
+        height: 86px;
+        line-height: 88px;
+    }
+}

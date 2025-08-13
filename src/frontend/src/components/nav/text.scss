@@ -1,0 +1,96 @@
+
+.textLogo {
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  display: inline-block;
+  padding: 1.5em 0em;
+  position: absolute;
+  top: 18%;
+  left: 84%;
+  width: 100%;
+  margin: 0;
+  margin-left:-260px;
+
+  .textLogoBody {
+
+    font: 700 4em/1 "Oswald", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255, 255, 255, .5);
+
+    /* Clip Background Image */
+
+    background: url(http://localhost:3000/930Z.gif)  center;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+    -webkit-backface-visibility: hidden;
+    -ms-transform: translate3d(0, 0, 0);
+
+  }
+}
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@mixin center(){
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  left:50%;
+  top:50%;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,,800,900);
+html{
+  width:100%;
+  height: 100%;
+}
+body{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+.container{
+  position:absolute;
+  @include center();
+}
+.title {
+  font-weight: 800;
+  color: transparent;
+  font-size: 120px;
+  background: url("http://localhost:3000/splash.png") repeat;
+  background-position: 40% 50%;
+  -webkit-background-clip: text;
+  position: relative;
+  text-align: center;
+  line-height: 90px;
+  letter-spacing: -8px;
+  opacity: 1;
+}
+.subtitle{
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top:10px;
+  padding-bottom: 300px;
+
+}

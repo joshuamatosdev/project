@@ -1,0 +1,60 @@
+// Please change your favorite font-size!
+$fontSize: 4rem;
+
+
+#ui {
+  transform: rotateZ(-4deg);
+  .text {
+    position: absolute;
+    left:2100px;
+    width:1000px;
+    top:15px;
+    margin:0;
+    font-size: $fontSize;
+    color: #1e3ca4;
+    line-height: $fontSize;
+    font-family: 'Anton', sans-serif;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    letter-spacing: 1rem;
+    overflow: hidden;
+
+    @for $i from 0 through 40 {
+      $key: $i + 1;
+      &:nth-child(#{$key}) {
+        $row: floor($i / 20);
+        color: rgba(random(30) + 55, 40, random(10) + 55, 1);
+        clip-path: polygon(
+                        $i * 5% - $row * 100% - random(2) $row * 50% - random(5),
+                        $key * 5% - $row * 100% + random(5) $row * 50% - random(30),
+                        $key * 5% - $row * 100% + random(5) $row * 50% + 50% + random(5),
+                        $i * 5% - $row * 100% - random(2) $row * 50% + 50% + random(30)
+        );
+        filter: blur(#{random(20) - 10}px);
+        .text_inner1 {
+          animation: vertical random(1000) + 700ms random(100) + 0ms ease-in-out infinite alternate;
+        }
+        .text_inner2 {
+          animation: horizontal random(1000) + 700ms random(100) + 0ms ease-in-out infinite alternate;
+        }
+      }
+    }
+  }
+}
+
+@keyframes horizontal {
+  0% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(-6px);
+  }
+}
+@keyframes vertical {
+  0% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
