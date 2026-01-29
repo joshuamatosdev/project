@@ -1,5 +1,6 @@
 package com.joshuamatos.library.artillery;
 
+import com.joshuamatos.library.exception.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,32 +20,37 @@ public class ArtilleryService {
     }
 
     public Artillery getArtilleryById(Long id) {
-        return artilleryRepository.findById(id).orElseThrow(() -> new RuntimeException("Book not found"));
+        return artilleryRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Artillery not found with id: " + id));
     }
 
     public Artillery updateArtillery(Artillery artillery, Long id) {
-        if (artilleryRepository.existsById(id)) {
-            Artillery patchArtillery = artilleryRepository.findById(id).orElseThrow();
+        Artillery existing = artilleryRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Artillery not found with id: " + id));
 
-
-            if (artillery.getType() != null)
-                patchArtillery.setType(artillery.getType());
-
-//            if(artillery.getRange() > 0)
-//                patchArtillery.setRange(artillery.getRange());
-//            if(artillery.getFavorite() != null)
-//            patchArtillery.setFavorite(artillery.getFavorite());
-
-            artilleryRepository.save(patchArtillery);
-            return patchArtillery;
-        } else {
-            return new Artillery();
+        if (artillery.getType() != null) {
+            existing.setType(artillery.getType());
         }
+        if (artillery.getArtRange() != null) {
+            existing.setArtRange(artillery.getArtRange());
+        }
+        if (artillery.getFavorite() != null) {
+            existing.setFavorite(artillery.getFavorite());
+        }
+        if (artillery.getRpm() != null) {
+            existing.setRpm(artillery.getRpm());
+        }
+        if (artillery.getFacts() != null) {
+            existing.setFacts(artillery.getFacts());
+        }
+
+        return artilleryRepository.save(existing);
     }
 
     public void deleteArtilleryById(Long id) {
-        if (artilleryRepository.existsById(id)) {
-            artilleryRepository.deleteById(id);
+        if (!artilleryRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Artillery not found with id: " + id);
         }
+        artilleryRepository.deleteById(id);
     }
 }

@@ -121,8 +121,13 @@ export function ObjectDetector(props) {
         const normalizedPredictions = normalizePredictions(predictions, imgSize);
         setPredictions(normalizedPredictions);
         console.log("Predictions: ", predictions);
-        props.predictionService({type: predictions[0].class, lat:lat, lng:lng})
-        props.toggleImageDetected(true)
+
+        if (predictions.length > 0) {
+            props.predictionService({type: predictions[0].class, lat:lat, lng:lng})
+            props.toggleImageDetected(true)
+        } else {
+            console.warn("No predictions detected in image");
+        }
     };
 
     const readImage = (file) => {

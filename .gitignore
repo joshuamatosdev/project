@@ -51,4 +51,22 @@ out/
 ### VS Code ###
 .vscode/
 package-lock.json
+
+# Environment files
+.env
 .env.local
+.env.*.local
+src/frontend/.env
+src/frontend/.env.local
+application-*.local.yaml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test coverage
+coverage/
+.nyc_output/

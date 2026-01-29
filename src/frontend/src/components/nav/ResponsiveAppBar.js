@@ -94,22 +94,22 @@ const ResponsiveAppBar = () => {
                             }}
                         >
 
-                                <MenuItem key={Math.random()} onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
+                                <MenuItem key="home" onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
                                     <Typography textAlign="center">
                                         <a href="/">Home</a>
                                 </Typography>
                                 </MenuItem>
-                            <MenuItem key={Math.random()} onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
+                            <MenuItem key="map" onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
                                 <Typography textAlign="center">
                                     <a href="/map">Map</a>
                                 </Typography>
                             </MenuItem>
-                            <MenuItem key={Math.random()} onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
+                            <MenuItem key="login" onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
                                 <Typography textAlign="center">
                                     <a href="/login">Login</a>
                                 </Typography>
                             </MenuItem>
-                            <MenuItem key={Math.random()} onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
+                            <MenuItem key="register" onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block'}}>
                                 <Typography textAlign="center">
                                     <a href="/register">Register</a>
                                 </Typography>

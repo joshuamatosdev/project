@@ -40,7 +40,8 @@ function Gmap({
                   toggleImageDetected
               }) {
     const {isLoaded} = useJsApiLoader({
-        id: 'google-map-script', googleMapsApiKey: API_KEY_GOES_HERE //  see: process.env.MY_ENVIRONMENT_VARIABLE
+        id: 'google-map-script',
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY || ''
     })
 
 
@@ -109,6 +110,7 @@ function Gmap({
         const predictOut = model.predict(input);
         const score = predictOut.dataSync()[0];
         predictOut.dispose();
+        input.dispose();
         setScore(score)
         return score;
     }
@@ -533,17 +535,12 @@ function Gmap({
                                                 onDblClick={handleRenderOff}
                                         />)
 
-                                        <Circle center={place} key={2342342} radius={(place.range) / 2.3}
+                                        <Circle center={place} key={`circle-inner-${place.lat}-${place.lng}`} radius={(place.range) / 2.3}
                                                 options={accuracyHighRadOptions}/>
-                                        <Circle center={place} key={2342342} radius={(place.range) / 2.3}
-                                                options={accuracyHighRadOptions}/>
-                                        <Circle center={place} key={23524365} radius={(place.range) / 1.6}
+                                        <Circle center={place} key={`circle-mid-${place.lat}-${place.lng}`} radius={(place.range) / 1.6}
                                                 options={accuracyMedRadOptions}/>
-                                        <Circle center={place} key={523523655} radius={place.range}
+                                        <Circle center={place} key={`circle-outer-${place.lat}-${place.lng}`} radius={place.range}
                                                 options={(place.friendly) ? accuracyLowFriendRadOptions : accuracyLowRadOptions}/>
-
-
-                                        l;
                                     </>
                                 )
                             }

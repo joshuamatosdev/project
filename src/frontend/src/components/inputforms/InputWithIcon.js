@@ -21,9 +21,9 @@ const InputWithIcon = (props) => {
                             value={props.currentArt}
                             onChange={props.currentArtSelected}
                         >
-                            {props.artillery.map((weapon, index) => {
+                            {props.artillery.map((weapon) => {
                                 return (
-                                    <MenuItem key={index} name={weapon.type}
+                                    <MenuItem key={weapon.id} name={weapon.type}
                                               value={weapon.type}>{weapon.type}</MenuItem>
                                 )
                             })}
@@ -51,9 +51,9 @@ const InputWithIcon = (props) => {
                             value={props.currentInfantry}
                             onChange={props.currentInfantrySelected}
                         >
-                            {props.infantry.map((soldier, index) => {
+                            {props.infantry.map((soldier) => {
                                 return (
-                                    <MenuItem key={index} name={soldier.type}
+                                    <MenuItem key={soldier.id} name={soldier.type}
                                               value={soldier.type}>{soldier.type}</MenuItem>
                                 )
                             })}
